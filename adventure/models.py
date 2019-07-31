@@ -50,7 +50,7 @@ class Player(models.Model):
             return Room.objects.get(id=self.currentRoom)
         except Room.DoesNotExist:
             self.initialize()
-            return self.room()
+            return self.room() 
 
 @receiver(post_save, sender=User)
 def create_user_player(sender, instance, created, **kwargs):
